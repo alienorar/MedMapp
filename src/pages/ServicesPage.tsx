@@ -173,7 +173,7 @@ export const ServicesPage = () => {
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('services.steps.preTravel.title')}</h3>
                       <ul className="space-y-3 text-gray-600">
-                        {t('services.steps.preTravel.items', { returnObjects: true }).map((item: string, index: number) => (
+                        {(t('services.steps.preTravel.items', { returnObjects: true }) as string[])?.map((item: string, index: number) => (
                           <li key={index} className="flex items-start">
                             <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <span>{item}</span>
@@ -199,7 +199,7 @@ export const ServicesPage = () => {
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('services.steps.duringTravel.title')}</h3>
                       <ul className="space-y-3 text-gray-600">
-                        {t('services.steps.duringTravel.items', { returnObjects: true }).map((item: string, index: number) => (
+                        {(t('services.steps.duringTravel.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                           <li key={index} className="flex items-start">
                             <span className="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <span>{item}</span>
@@ -225,7 +225,7 @@ export const ServicesPage = () => {
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('services.steps.postTravel.title')}</h3>
                       <ul className="space-y-3 text-gray-600">
-                        {t('services.steps.postTravel.items', { returnObjects: true }).map((item: string, index: number) => (
+                        {(t('services.steps.postTravel.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                           <li key={index} className="flex items-start">
                             <span className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <span>{item}</span>

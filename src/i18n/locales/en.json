@@ -55,5 +55,346 @@
     "readTime": "min read",
     "by": "by",
     "noPosts": "No blog posts available yet"
+  },
+  "services": {
+    "title": "Our Medical Services",
+    "subtitle": "Complete range of medical services in India's best clinics",
+    "ctaButton": "Get Consultation",
+    "processTitle": "How We Work",
+    "processSubtitle": "Simple process to get medical care in India",
+    "specialties": {
+      "cardiology": {
+        "title": "Cardiology",
+        "description": "Treatment of heart and vascular diseases"
+      },
+      "oncology": {
+        "title": "Oncology",
+        "description": "Diagnosis and treatment of cancer"
+      },
+      "neurosurgery": {
+        "title": "Neurosurgery",
+        "description": "Brain and spinal cord surgeries"
+      },
+      "orthopedics": {
+        "title": "Orthopedics",
+        "description": "Treatment of musculoskeletal disorders"
+      },
+      "liverTransplant": {
+        "title": "Liver Transplant",
+        "description": "Liver transplantation and post-operative care"
+      },
+      "kidneyTransplant": {
+        "title": "Kidney Transplant",
+        "description": "Kidney transplantation and dialysis"
+      },
+      "cosmeticSurgery": {
+        "title": "Cosmetic Surgery",
+        "description": "Aesthetic procedures and plastic surgery"
+      },
+      "ivf": {
+        "title": "IVF",
+        "description": "Infertility treatment with IVF"
+      },
+      "bariatricSurgery": {
+        "title": "Bariatric Surgery",
+        "description": "Surgical treatment of obesity"
+      }
+    },
+    "steps": {
+      "preTravel": {
+        "title": "Before Travel",
+        "items": [
+          "Consultation with our specialists",
+          "Getting medical reports",
+          "Travel and visa planning",
+          "Flight and hotel booking"
+        ]
+      },
+      "duringTravel": {
+        "title": "During Travel",
+        "items": [
+          "Airport pickup",
+          "Transfer to clinic",
+          "Medical procedures",
+          "Constant support"
+        ]
+      },
+      "postTravel": {
+        "title": "After Travel",
+        "items": [
+          "Post-operative care",
+          "Follow-up examinations",
+          "Home support",
+          "Planning repeat visits"
+        ]
+      }
+    }
+  },
+  "clinics": {
+    "title": "Our Clinics",
+    "subtitle": "India's best medical centers",
+    "filters": {
+      "specialty": "Specialty",
+      "country": "Country",
+      "city": "City",
+      "allSpecialties": "All Specialties",
+      "allCountries": "All Countries",
+      "allCities": "All Cities"
+    },
+    "card": {
+      "viewDetails": "View Details",
+      "bookConsultation": "Book Consultation"
+    }
+  },
+  "pricing": {
+    "title": "Treatment Prices",
+    "subtitle": "Transparent and affordable medical service prices",
+    "filters": {
+      "department": "Department",
+      "procedure": "Procedure",
+      "sortBy": "Sort By",
+      "allDepartments": "All Departments",
+      "allProcedures": "All Procedures",
+      "priceLowToHigh": "Price: Low to High",
+      "priceHighToLow": "Price: High to Low",
+      "nameAtoZ": "Name: A-Z",
+      "nameZtoA": "Name: Z-A"
+    },
+    "card": {
+      "from": "from",
+      "getQuote": "Get Quote",
+      "includes": "Includes",
+      "notIncludes": "Not Includes"
+    }
+  },
+  "doctors": {
+    "title": "Our Doctors",
+    "subtitle": "Experienced specialists with international qualifications",
+    "hero": {
+      "title": "Our Doctors",
+      "subtitle": "Experienced specialists with international qualifications",
+      "findDoctor": "Find Doctor",
+      "emergency": "Emergency"
+    },
+    "filters": {
+      "specialty": "Specialty",
+      "country": "Country",
+      "city": "City",
+      "allSpecialties": "All Specialties",
+      "allCountries": "All Countries",
+      "allCities": "All Cities",
+      "resetFilters": "Reset Filters"
+    },
+    "card": {
+      "experience": "years experience",
+      "patients": "patients",
+      "online": "Online",
+      "nextAvailable": "Next Available",
+      "bookConsultation": "Book Consultation",
+      "languages": "Languages",
+      "education": "Education",
+      "achievements": "Achievements"
+    },
+    "noResults": "No doctors found",
+    "noResultsDesc": "Try changing your search parameters"
+  },
+  "testimonials": {
+    "hero": {
+      "title": "Patient Testimonials",
+      "subtitle": "Success stories of our patients treated in India's best clinics.",
+      "stats": {
+        "mamnunBemorlar": "Satisfied Patients",
+        "ijobiyFikrlar": "Positive Reviews",
+        "mamlakatdanBemorlar": "Patients from Country"
+      }
+    },
+    "card": {
+      "verified": "Verified"
+    },
+    "cta": {
+      "title": "Do you have a story too?",
+      "subtitle": "If you also received treatment through MedMapp, share your story and inspire others.",
+      "shareButton": "Share Your Story"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Reliable, Safe and Transparent",
+      "subtitle": "Get treated in India's best clinics through MedMapp platform!"
+    },
+    "form": {
+      "location": "Where do you live?",
+      "treatment": "Treatment Method",
+      "phone": "Your Phone",
+      "selectRegion": "Select Region",
+      "selectTreatment": "Select Treatment Method",
+      "consultation": "Free Consultation"
+    },
+    "stats": {
+      "satisfiedPatients": "Satisfied Patients",
+      "internationalClinics": "International Clinics",
+      "worldClassDoctors": "World Class Doctors"
+    },
+    "medicalCare": {
+      "title": "Multi-disciplinary Medical Care",
+      "subtitle": "From hair transplant to heart transplant - we cover all your medical needs.",
+      "oncology": "Oncology",
+      "oncologyDesc": "Cancer treatment with proven results.",
+      "neurosurgery": "Neurosurgery",
+      "neurosurgeryDesc": "Neurological surgical procedures for adults and children.",
+      "spineSurgery": "Spine Surgery",
+      "spineSurgeryDesc": "Precise surgical procedures to improve mobility.",
+      "cardiology": "Cardiology",
+      "cardiologyDesc": "World-class heart care for adults and children.",
+      "orthopedics": "Orthopedics",
+      "orthopedicsDesc": "Joint replacement and bone deformity treatment.",
+      "ivf": "IVF",
+      "ivfDesc": "Infertility treatment with high success rates.",
+      "gynecology": "Gynecology",
+      "gynecologyDesc": "Specialized services for women's health.",
+      "cosmeticSurgery": "Cosmetic Surgery",
+      "cosmeticSurgeryDesc": "Aesthetic procedures that will give you a new look.",
+      "weightLoss": "Weight Loss",
+      "weightLossDesc": "Effective weight reduction through bariatric surgery.",
+      "liverTransplant": "Liver Transplant",
+      "liverTransplantDesc": "Liver transplantation procedures of various complexity.",
+      "kidneyTransplant": "Kidney Transplant",
+      "kidneyTransplantDesc": "Specialist in kidney transplantation and care.",
+      "boneMarrow": "Bone Marrow",
+      "boneMarrowDesc": "Opportunities for compatible and incompatible donors."
+    },
+    "hospitals": {
+      "title": "Popular Hospitals",
+      "viewAll": "View All",
+      "viewDetails": "View Details",
+      "amrita": "Amrita Hospital, Faridabad",
+      "amritaLocation": "Faridabad, Delhi, India",
+      "artemis": "Artemis Hospital",
+      "artemisLocation": "Gurgaon",
+      "apollo": "Apollo Hospital",
+      "apolloLocation": "Bangalore",
+      "max": "MAX Hospital",
+      "maxLocation": "New Delhi"
+    },
+    "howWeWork": {
+      "title": "How We Work?",
+      "subtitle": "We organize treatment in India in 4 simple steps.",
+      "step1": {
+        "title": "Contact Us",
+        "desc": "Share your illness details with us and our team will contact you."
+      },
+      "step2": {
+        "title": "Get Medical Report",
+        "desc": "Get medical report and estimated treatment cost within 48 hours."
+      },
+      "step3": {
+        "title": "Book Your Flights",
+        "desc": "Book your flights and our team will pick you up at the airport"
+      },
+      "step4": {
+        "title": "Start Treatment",
+        "desc": "Start your treatment process in India and restore your health."
+      }
+    },
+    "services": {
+      "title": "Our Services Cover Every Need",
+      "subtitle": "An assigned manager from our team will help you. The list of services you can expect from us is FREE.",
+      "medicalReport": "Medical Reports and Prices",
+      "medicalReportDesc": "Get quick reports and price quotes.",
+      "preTravel": "Pre-travel Consultations",
+      "preTravelDesc": "Understand the treatment process before traveling.",
+      "visaHelp": "Visa Assistance",
+      "visaHelpDesc": "Get complete help in obtaining medical visa.",
+      "translators": "Translators",
+      "translatorsDesc": "Qualified specialists to overcome language barriers at every step.",
+      "hotel": "Hotel Service",
+      "hotelDesc": "Near the clinic and according to your budget.",
+      "appointment": "Appointment and Meetings",
+      "appointmentDesc": "Complete coordination of medical logistics."
+    },
+    "tryNow": {
+      "title": "Try Now",
+      "subtitle": "Fast and reliable solutions for your healthcare needs.",
+      "onlineConsultation": "Get Online Doctor Consultation",
+      "onlineConsultationDesc": "Connect with experienced doctors without leaving home.",
+      "secondOpinion": "Get Second Opinion",
+      "secondOpinionDesc": "Send your reports and get free expert opinion.",
+      "chatWithExpert": "Chat with Healthcare Expert",
+      "healthServices": "Health Services",
+      "healthServicesDesc": "Get treated at world-class medical centers.",
+      "sendRequest": "Send Request"
+    },
+    "finalStats": {
+      "patients": "Patients",
+      "hospitals": "Hospitals",
+      "doctors": "Doctors",
+      "satisfaction": "Satisfaction"
+    },
+    "ourServices": {
+      "title": "Our Services",
+      "subtitle": "Complete care for your health",
+      "cardiology": "Cardiology",
+      "cardiologyDesc": "Heart disease treatment",
+      "oncology": "Oncology",
+      "oncologyDesc": "Cancer treatment",
+      "neurosurgery": "Neurosurgery",
+      "neurosurgeryDesc": "Brain and nervous system",
+      "orthopedics": "Orthopedics",
+      "orthopedicsDesc": "Joints and bones",
+      "transplant": "Transplant",
+      "transplantDesc": "Organ transplant surgeries",
+      "cosmetic": "Cosmetic Surgery",
+      "cosmeticDesc": "Aesthetic surgeries"
+    },
+    "popularHospitals": {
+      "title": "Popular Hospitals",
+      "subtitle": "India's best medical centers",
+      "details": "Details",
+      "amrita": "Amrita Hospital",
+      "amritaLocation": "Faridabad, India",
+      "apollo": "Apollo Hospital",
+      "apolloLocation": "Chennai, India",
+      "artemis": "Artemis Hospital",
+      "artemisLocation": "Gurgaon, India",
+      "asian": "Asian Hospital",
+      "asianLocation": "Mumbai, India",
+      "fortis": "Fortis Hospital",
+      "fortisLocation": "Delhi, India",
+      "max": "Max Hospital",
+      "maxLocation": "Delhi, India",
+      "medanta": "Medanta Hospital",
+      "medantaLocation": "Gurgaon, India",
+      "metro": "Metro Hospital",
+      "metroLocation": "Delhi, India"
+    },
+    "doctors": {
+      "title": "Our Doctors",
+      "subtitle": "Highly qualified and experienced specialists",
+      "consultation": "Consultation",
+      "rajesh": "Dr. Rajesh Kumar",
+      "cardiologist": "Cardiologist",
+      "experience15": "15 years",
+      "priya": "Dr. Priya Sharma",
+      "oncologist": "Oncologist",
+      "experience12": "12 years",
+      "amit": "Dr. Amit Patel",
+      "neurosurgeon": "Neurosurgeon",
+      "experience18": "18 years",
+      "sunita": "Dr. Sunita Singh",
+      "orthopedist": "Orthopedist",
+      "experience14": "14 years",
+      "vikram": "Dr. Vikram Mehta",
+      "transplantologist": "Transplantologist",
+      "experience20": "20 years",
+      "anjali": "Dr. Anjali Gupta",
+      "cosmeticSurgeon": "Cosmetic Surgeon",
+      "experience10": "10 years"
+    },
+    "cta": {
+      "title": "Need Medical Help?",
+      "subtitle": "Our specialists are ready to help you",
+      "call": "Call",
+      "chat": "Chat"
+    }
   }
 }

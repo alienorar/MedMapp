@@ -334,5 +334,191 @@
       "subtitle": "Agar siz ham MedMapp orqali shifo topgan bo'lsangiz, o'z hikoyangizni biz bilan ulashing va boshqalarga ilhom bering.",
       "shareButton": "Hikoyangizni yuboring"
     }
+  },
+  "home": {
+    "hero": {
+      "title": "Ishonchli, xavfsiz va shaffof",
+      "subtitle": "MedMapp platformasi orqali Hindistondagi eng mashhur shifoxonalarda davolaning!"
+    },
+    "form": {
+      "location": "Qayerda istiqomat qilasiz?",
+      "treatment": "Davolash usuli",
+      "phone": "Telefon raqamingiz",
+      "selectRegion": "Viloyatni tanlang",
+      "selectTreatment": "Davolash usulini",
+      "consultation": "Bepul konsultatsiya"
+    },
+    "stats": {
+      "satisfiedPatients": "Mamnun bemorlar",
+      "internationalClinics": "Xalqaro Klinikalar",
+      "worldClassDoctors": "Jahon darajasidagi Shifokorlar"
+    },
+    "medicalCare": {
+      "title": "Ko'p tarmoqli tibbiy yordam",
+      "subtitle": "Soch ekishdan tortib yurak transplantatsiyasigacha, biz sizning barcha tibbiy ehtiyojlaringizni qoplaymiz.",
+      "oncology": "Onkologiya",
+      "oncologyDesc": "Isbotlangan natijalarga ega saratonni davolash.",
+      "neurosurgery": "Neyrojarrohlik",
+      "neurosurgeryDesc": "Kattalar va bolalar uchun nevrologik jarrohlik amaliyotlari.",
+      "spineSurgery": "Umurtqa jarrohligi",
+      "spineSurgeryDesc": "Harakatchanlikni yaxshilash uchun aniq jarrohlik amaliyotlari.",
+      "cardiology": "Kardiologiya",
+      "cardiologyDesc": "Kattalar va bolalar uchun jahon darajasidagi yurak parvarishi.",
+      "orthopedics": "Ortopediya",
+      "orthopedicsDesc": "Bo'g'imlarni almashtirish va suyak deformatsiyasini davolash.",
+      "ivf": "EKU",
+      "ivfDesc": "Yuqori muvaffaqiyat darajasiga ega bepushtlikni davolash.",
+      "gynecology": "Ginekologiya",
+      "gynecologyDesc": "Ayollar salomatligi uchun ixtisoslashtirilgan xizmatlar.",
+      "cosmeticSurgery": "Kosmetik jarrohlik",
+      "cosmeticSurgeryDesc": "Sizga yangi ko'rinish beruvchi estetik muolajalar.",
+      "weightLoss": "Vazn yo'qotish",
+      "weightLossDesc": "Samarali bariatrik jarrohlik orqali vaznni kamaytirish.",
+      "liverTransplant": "Jigar transplantatsiyasi",
+      "liverTransplantDesc": "Turli murakkablikdagi jigar ko'chirib o'tkazish amaliyotlari.",
+      "kidneyTransplant": "Buyrak transplantatsiyasi",
+      "kidneyTransplantDesc": "Buyrak transplantatsiyasi va parvarishi bo'yicha mutaxassis.",
+      "boneMarrow": "Suyak iligi",
+      "boneMarrowDesc": "Mos va nomos donorlar uchun imkoniyatlar."
+    },
+    "hospitals": {
+      "title": "Ommabop shifoxonalar",
+      "viewAll": "Barchasini ko'rish",
+      "viewDetails": "Batafsil ko'rish",
+      "amrita": "Amrita shifoxonasi, Faridobod",
+      "amritaLocation": "Faridabod, Dehli, Hindiston",
+      "artemis": "Artemis shifoxonasi",
+      "artemisLocation": "Gurgaon",
+      "apollo": "Apollo shifoxonasi",
+      "apolloLocation": "Bangalor",
+      "max": "MAX shifoxonasi",
+      "maxLocation": "Yangi Dehli"
+    },
+    "howWeWork": {
+      "title": "Biz qanday ishlaymiz?",
+      "subtitle": "Biz Hindistonda davolanishni 4 oddiy qadamda tashkil qilamiz.",
+      "step1": {
+        "title": "Biz bilan bog'laning",
+        "desc": "Kasallik tafsilotlarini biz bilan baham ko'ring va jamoamiz siz bilan bog'lanadi."
+      },
+      "step2": {
+        "title": "Tibbiy xulosa oling",
+        "desc": "48 soat ichida tibbiy xulosa va davolanishning taxminiy narxini oling."
+      },
+      "step3": {
+        "title": "Chiptalaringizni band qiling",
+        "desc": "Parvozlaringizni band qiling va sizni aeroportda jamoamiz kutib oladi"
+      },
+      "step4": {
+        "title": "Davolanishni boshlang",
+        "desc": "Hindistonda davolanish jarayonini boshlang va sog'ligingizni tiklang."
+      }
+    },
+    "services": {
+      "title": "Bizning xizmatlarimiz har bir ehtiyojni qoplaydi",
+      "subtitle": "Jamoamizdan biriktirilgan menejer sizga yordam beradi. Bizdan kutishingiz mumkin bo'lgan xizmatlar ro'yxati BEPUL.",
+      "medicalReport": "Tibbiy xulosa va narxlar",
+      "medicalReportDesc": "Tezkor xulosalar va narx takliflarini oling.",
+      "preTravel": "Sayohatdan oldingi konsultatsiyalar",
+      "preTravelDesc": "Sayohat qilishdan oldin davolanish jarayonini tushunib oling.",
+      "visaHelp": "Viza yordami",
+      "visaHelpDesc": "Tibbiy viza olishda to'liq yordam oling.",
+      "translators": "Tarjimonlar",
+      "translatorsDesc": "Har bir qadamda til to'siqlarini yengish uchun malakali mutaxassislar.",
+      "hotel": "Mehmonxona xizmati",
+      "hotelDesc": "Shifoxonaga yaqin va byudjetingizga mos.",
+      "appointment": "Qabul va uchrashuv",
+      "appointmentDesc": "Tibbiy logistikaning to'liq muvofiqlashtirilishi."
+    },
+    "tryNow": {
+      "title": "Hozir sinab ko'ring",
+      "subtitle": "Sog'liqni saqlash ehtiyojlaringiz uchun tez va ishonchli yechimlar.",
+      "onlineConsultation": "Onlayn shifokor maslahatini oling",
+      "onlineConsultationDesc": "Uyingizdan chiqmasdan tajribali shifokorlar bilan bog'laning.",
+      "secondOpinion": "Ikkinchi fikrni oling",
+      "secondOpinionDesc": "Hisobotlaringizni yuboring va bepul ekspert xulosasini oling.",
+      "chatWithExpert": "Sog'liqni saqlash mutaxassisi bilan suhbatlashing",
+      "healthServices": "Salomatlik xizmatlari",
+      "healthServicesDesc": "Jahon darajasidagi salomatlik markazlarida davolaning.",
+      "sendRequest": "So'rov yuborish"
+    },
+    "finalStats": {
+      "patients": "Bemorlar",
+      "hospitals": "Shifoxonalar",
+      "doctors": "Shifokorlar",
+      "satisfaction": "Mamnunlik"
+    },
+    "ourServices": {
+      "title": "Bizning xizmatlarimiz",
+      "subtitle": "Sizning sog'ligingiz uchun to'liq g'amxo'rlik",
+      "cardiology": "Kardiologiya",
+      "cardiologyDesc": "Yurak kasalliklarini davolash",
+      "oncology": "Onkologiya",
+      "oncologyDesc": "Saraton kasalliklarini davolash",
+      "neurosurgery": "Neyroxirurgiya",
+      "neurosurgeryDesc": "Miya va asab tizimi",
+      "orthopedics": "Ortopediya",
+      "orthopedicsDesc": "Bo'g'imlar va suyaklar",
+      "transplant": "Transplantatsiya",
+      "transplantDesc": "Organ ko'chirish operatsiyalari",
+      "cosmetic": "Kosmetik jarrohlik",
+      "cosmeticDesc": "Estetik operatsiyalar"
+    },
+    "popularHospitals": {
+      "title": "Eng mashhur shifoxonalar",
+      "subtitle": "Hindistonning eng yaxshi tibbiy markazlari",
+      "details": "Batafsil",
+      "amrita": "Amrita Hospital",
+      "amritaLocation": "Faridabad, Hindiston",
+      "apollo": "Apollo Hospital",
+      "apolloLocation": "Chennai, Hindiston",
+      "artemis": "Artemis Hospital",
+      "artemisLocation": "Gurgaon, Hindiston",
+      "asian": "Asian Hospital",
+      "asianLocation": "Mumbai, Hindiston",
+      "fortis": "Fortis Hospital",
+      "fortisLocation": "Delhi, Hindiston",
+      "max": "Max Hospital",
+      "maxLocation": "Delhi, Hindiston",
+      "medanta": "Medanta Hospital",
+      "medantaLocation": "Gurgaon, Hindiston",
+      "metro": "Metro Hospital",
+      "metroLocation": "Delhi, Hindiston"
+    },
+    "doctors": {
+      "title": "Bizning shifokorlarimiz",
+      "subtitle": "Yuqori malakali va tajribali mutaxassislar",
+      "hero": {
+        "title": "Bizning shifokorlarimiz",
+        "subtitle": "Yuqori malakali va tajribali mutaxassislar",
+        "findDoctor": "Shifokor topish",
+        "emergency": "Shoshilinch yordam"
+      },
+      "consultation": "Konsultatsiya",
+      "rajesh": "Dr. Rajesh Kumar",
+      "cardiologist": "Kardiolog",
+      "experience15": "15 yil",
+      "priya": "Dr. Priya Sharma",
+      "oncologist": "Onkolog",
+      "experience12": "12 yil",
+      "amit": "Dr. Amit Patel",
+      "neurosurgeon": "Neyroxirurg",
+      "experience18": "18 yil",
+      "sunita": "Dr. Sunita Singh",
+      "orthopedist": "Ortoped",
+      "experience14": "14 yil",
+      "vikram": "Dr. Vikram Mehta",
+      "transplantologist": "Transplantolog",
+      "experience20": "20 yil",
+      "anjali": "Dr. Anjali Gupta",
+      "cosmeticSurgeon": "Kosmetik jarroh",
+      "experience10": "10 yil"
+    },
+    "cta": {
+      "title": "Tibbiy yordamga muhtojmisiz?",
+      "subtitle": "Bizning mutaxassislarimiz sizga yordam berishga tayyor",
+      "call": "Telefon qilish",
+      "chat": "Chat qilish"
+    }
   }
 }
