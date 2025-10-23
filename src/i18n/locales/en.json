@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "clinics": "Clinics",
+    "pricing": "Pricing",
+    "doctors": "Doctors",
+    "testimonials": "Testimonials",
+    "blog": "Blog"
+  },
+  "common": {
+    "getMedicalDiagnosis": "Get Medical Diagnosis",
+    "readMore": "Read More",
+    "submit": "Submit",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error!",
+    "success": "Success!"
+  },
+  "footer": {
+    "about": "MedMapp is your trusted medical companion in India. We organize quality and affordable treatment in the best clinics.",
+    "contact": "Contact Us",
+    "phone": "+998(77) 535-66-55",
+    "email": "info@medmapp.uz",
+    "location": "Sirdaryo region, Uzbekistan",
+    "copyright": "© 2025 MedMapp. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "publicOffer": "Public Offer"
+  },
+  "form": {
+    "consultationTitle": "Consultation Form",
+    "consultationSubtitle": "Fill out the form to get a FREE medical diagnosis from an international clinic!",
+    "fullName": "Full Name",
+    "dob": "Date of Birth",
+    "phone": "Your Phone",
+    "email": "E-mail",
+    "requirements": "What concerns you?",
+    "medicalFiles": "Medical Files",
+    "selectFiles": "Select files or drag them here",
+    "termsAgreement": "I confirm the accuracy of the information provided and have read",
+    "successMessage": "Your medical consultation request has been received! Our specialists will contact you soon."
+  },
+  "blog": {
+    "title": "MedMapp Blog",
+    "subtitle": "Medical treatment in India, healthy lifestyle, and the latest news in the world of medicine.",
+    "categories": {
+      "medicalTourism": "Medical Tourism",
+      "transplant": "Transplantation",
+      "cardiology": "Cardiology",
+      "guide": "Guide",
+      "oncology": "Oncology",
+      "neurosurgery": "Neurosurgery"
+    },
+    "readTime": "min read",
+    "by": "by",
+    "noPosts": "No blog posts available yet"
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "clinics": "Shifoxonalar",
+    "pricing": "Narxlar",
+    "doctors": "Shifokorlar",
+    "testimonials": "Sharhlar",
+    "blog": "Blog"
+  },
+  "common": {
+    "getMedicalDiagnosis": "Tibbiy tashxis olish",
+    "readMore": "Batafsil",
+    "submit": "Yuborish",
+    "close": "Yopish",
+    "loading": "Yuklanmoqda...",
+    "error": "Xatolik!",
+    "success": "Muvaffaqiyatli!"
+  },
+  "footer": {
+    "about": "MedMapp - bu sizning Hindistondagi ishonchli tibbiy hamrohingiz. Biz eng yaxshi klinikalarda sifatli va hamyonbop davolanishni tashkil etamiz.",
+    "contact": "Biz bilan bog'laning",
+    "phone": "+998(77) 535-66-55",
+    "email": "info@medmapp.uz",
+    "location": "Sirdaryo viloyati, O'zbekiston",
+    "copyright": "© 2025 MedMapp. Barcha huquqlar himoyalangan.",
+    "privacyPolicy": "Maxfiylik siyosati",
+    "termsOfUse": "Foydalanuvchi kelishuvi",
+    "publicOffer": "Ommaviy oferta"
+  },
+  "form": {
+    "consultationTitle": "Konsultatsiya uchun anketa",
+    "consultationSubtitle": "Xorijiy klinikadan BEPUL tibbiy tashxis olish uchun formani to'ldiring!",
+    "fullName": "Ism-familiya",
+    "dob": "Tug'ilgan sana",
+    "phone": "Telefon raqamingiz",
+    "email": "E-mail",
+    "requirements": "Sizni nima bezovta qilmoqda?",
+    "medicalFiles": "Tibbiy fayllar",
+    "selectFiles": "Fayllarni tanlang yoki bu yerga tashlang",
+    "termsAgreement": "Men kiritgan barcha ma'lumotlarning to'g'riligini tasdiqlayman hamda",
+    "successMessage": "Sizning tibbiy konsultatsiya olish uchun arizangiz qabul qilindi! Tez orada mutaxassislarimiz siz bilan bog'lanishadi."
+  },
+  "blog": {
+    "title": "MedMapp blogi",
+    "subtitle": "Hindistonda davolanish, sog'lom turmush tarzi va tibbiyot olamidagi eng so'nggi yangiliklar.",
+    "categories": {
+      "medicalTourism": "Tibbiy Turizm",
+      "transplant": "Transplantatsiya",
+      "cardiology": "Kardiologiya",
+      "guide": "Qo'llanma",
+      "oncology": "Onkologiya",
+      "neurosurgery": "Neyroxirurgiya"
+    },
+    "readTime": "daqiqa o'qish",
+    "by": "muallif",
+    "noPosts": "Hozircha blog postlari mavjud emas"
+  },
+  "services": {
+    "title": "Bizning xizmatlarimiz",
+    "subtitle": "Biz shunchaki davolanishni tashkil qilmaymiz, biz sizning to'liq sog'ayish yo'lingizda ishonchli hamrohingiz bo'lamiz.",
+    "ctaButton": "Xizmatlar bilan tanishish",
+    "processTitle": "Sog'ayish sari yo'lingiz",
+    "processSubtitle": "Bizning g'amxo'rligimiz sizning sayohatingizning har bir bosqichini qamrab oladi.",
+    "steps": {
+      "preTravel": {
+        "title": "Sayohatdan oldingi bepul xizmatlar",
+        "items": [
+          "Tibbiy hisobotlaringiz asosida bir nechta klinikalardan xulosa va narx takliflari.",
+          "Sizning holatingiz va byudjetingizga mos eng yaxshi shifokor va klinikani tanlash.",
+          "Sayohatdan oldin tanlangan shifokor bilan video-maslahat tashkil etish.",
+          "Tibbiy viza olish uchun klinikadan taklifnoma va kerakli hujjatlarni tayyorlash."
+        ]
+      },
+      "duringTravel": {
+        "title": "Sayohat davomidagi qo'llab-quvvatlash",
+        "items": [
+          "Shaxsiy avtomobil bilan aeroportdan kutib olish va mehmonxona/klinikaga transfer.",
+          "Klinikada shifokor bilan muloqot uchun professional tibbiy tarjimon xizmati.",
+          "Byudjetingizga mos, klinikaga yaqin turar joyni (mehmonxona, apartament) band qilish.",
+          "Safar davomida yuzaga kelishi mumkin bo'lgan har qanday savol bo'yicha 24/7 aloqa."
+        ]
+      },
+      "postTravel": {
+        "title": "Sayohatdan keyingi g'amxo'rlik",
+        "items": [
+          "Davolanishdan so'ng shifokor bilan onlayn kuzatuvlarni tashkil etish.",
+          "Barcha tibbiy xulosalar va hisobotlarning tarjima qilingan nusxalarini taqdim etish.",
+          "Keyingi davolash kurslari yoki dori-darmonlar bo'yicha yordam va maslahatlar."
+        ]
+      }
+    },
+    "specialties": {
+      "cardiology": {
+        "title": "Kardiologiya",
+        "description": "Yurak va qon tomir kasalliklarini tashxislash va davolash bo'yicha ilg'or yechimlar."
+      },
+      "oncology": {
+        "title": "Onkologiya",
+        "description": "Saraton kasalliklariga qarshi kurashda eng zamonaviy texnologiyalar va individual yondashuv."
+      },
+      "neurosurgery": {
+        "title": "Neyroxirurgiya",
+        "description": "Miya va asab tizimi kasalliklarini davolashda yuqori malakali mutaxassislar xizmati."
+      },
+      "orthopedics": {
+        "title": "Ortopediya",
+        "description": "Bo'g'imlarni almashtirish, sport jarohatlari va suyak deformatsiyasini davolash."
+      },
+      "liverTransplant": {
+        "title": "Jigar Transplantatsiyasi",
+        "description": "Turli murakkablikdagi jigar ko'chirish amaliyotlari va donorlik dasturlari."
+      },
+      "kidneyTransplant": {
+        "title": "Buyrak Transplantatsiyasi",
+        "description": "Buyrakni ko'chirib o'tkazish va operatsiyadan keyingi parvarish bo'yicha ekspert yordam."
+      },
+      "cosmeticSurgery": {
+        "title": "Kosmetik Jarrohlik",
+        "description": "Sizning orzuyingizdagi ko'rinishga erishish uchun estetik va rekonstruktiv muolajalar."
+      },
+      "ivf": {
+        "title": "EKU (IVF)",
+        "description": "Bepushtlikni davolashda yuqori muvaffaqiyatga ega zamonaviy reproduktiv texnologiyalar."
+      },
+      "bariatricSurgery": {
+        "title": "Bariatrik Jarrohlik",
+        "description": "Samarali bariatrik jarrohlik yo'li bilan sog'lom vaznga erishish va hayot sifatini yaxshilash."
+      }
+    }
+  },
+  "clinics": {
+    "title": "Eng yaxshi klinikalarni toping",
+    "subtitle": "Dunyoning yetakchi shifoxonalari orasidan o'zingizga mosini tanlang va sog'ligingizga befarq bo'lmang.",
+    "found": "ta klinika topildi",
+    "viewDetails": "Batafsil ko'rish",
+    "details": "Batafsil",
+    "noResults": "Hech qanday natija topilmadi",
+    "tryDifferentFilters": "Boshqa filtrlarni sinab ko'ring",
+    "filters": {
+      "specialty": "Yo'nalish bo'yicha",
+      "country": "Davlat bo'yicha",
+      "city": "Shahar bo'yicha",
+      "allSpecialties": "Barcha yo'nalishlar",
+      "allCountries": "Barcha davlatlar",
+      "allCities": "Barcha shaharlar",
+      "cardiology": "Kardiologiya",
+      "oncology": "Onkologiya",
+      "neurology": "Nevrologiya",
+      "india": "Hindiston",
+      "newDelhi": "Yangi Dehli",
+      "faridabad": "Faridobod",
+      "gurgaon": "Gurgaon",
+      "bangalore": "Bangalor"
+    }
+  },
+  "clinicSingle": {
+    "consultNow": "Hozir konsultatsiya oling",
+    "viewGallery": "Galereyani ko'rish",
+    "nav": {
+      "about": "Haqida",
+      "treatments": "Davolash",
+      "doctors": "Shifokorlar",
+      "prices": "Narxlar",
+      "infrastructure": "Infratuzilma",
+      "gallery": "Galereya",
+      "appointment": "Uchrashuv"
+    },
+    "about": {
+      "title": "Shifoxona haqida",
+      "beds": "O'rinlar",
+      "doctors": "Shifokorlar",
+      "experience": "Yil tajriba",
+      "patients": "Bemorlar"
+    },
+    "treatments": {
+      "title": "Davolash yo'nalishlari",
+      "subtitle": "Bizning shifoxonada turli yo'nalishlar bo'yicha davolanish amalga oshiriladi"
+    },
+    "doctors": {
+      "title": "Bizning shifokorlarimiz",
+      "subtitle": "Yuqori malakali va tajribali mutaxassislar",
+      "experience": "tajriba",
+      "consult": "Konsultatsiya"
+    },
+    "prices": {
+      "title": "Davolash narxlari",
+      "subtitle": "Shaffof va raqobatbardosh narxlarda davolanish",
+      "treatment": "Davolash turi",
+      "price": "Narx",
+      "duration": "Davomiyligi"
+    },
+    "infrastructure": {
+      "title": "Infratuzilma",
+      "subtitle": "Zamonaviy texnologiyalar va qulay sharoitlar"
+    },
+    "gallery": {
+      "title": "Shifoxona galereyasi",
+      "subtitle": "Bizning shifoxonaning ichki va tashqi ko'rinishi"
+    },
+    "appointment": {
+      "title": "Uchrashuv band qiling",
+      "subtitle": "Shifokor bilan uchrashuv vaqti belgilang",
+      "fullName": "To'liq ism",
+      "fullNamePlaceholder": "F.I.O",
+      "phone": "Telefon raqam",
+      "treatment": "Davolash turi",
+      "selectTreatment": "Davolash turini tanlang",
+      "message": "Xabar",
+      "messagePlaceholder": "Qo'shimcha ma'lumotlar...",
+      "submit": "Uchrashuv band qilish"
+    }
+  },
+  "pricing": {
+    "title": "Shaffof narxlarni solishtiring",
+    "subtitle": "Eng yaxshi klinikalardagi davolash narxlarini solishtiring va o'zingiz uchun eng ma'qulini tanlang.",
+    "filters": {
+      "department": "Yo'nalishni tanlang",
+      "procedure": "Muolajani tanlang",
+      "sort": "Saralash",
+      "allProcedures": "Barcha muolajalar"
+    },
+    "departments": {
+      "cardiology": "Kardiologiya",
+      "orthopedics": "Ortopediya",
+      "oncology": "Onkologiya",
+      "neurology": "Nevrologiya"
+    },
+    "sort": {
+      "default": "Standart",
+      "cheapest": "Eng arzon",
+      "expensive": "Eng qimmat"
+    },
+    "results": {
+      "prices": "narxlari",
+      "found": "ta taklif topildi"
+    },
+    "noResults": "Ushbu mezonlar bo'yicha natijalar topilmadi",
+    "tryDifferentFilters": "Boshqa filtrlarni sinab ko'ring",
+    "startingFrom": "dan boshlab",
+    "requestQuote": "So'rov yuborish",
+    "cta": {
+      "title": "Bepul konsultatsiya oling",
+      "subtitle": "Mutaxassislarimiz sizga eng yaxshi davolanish variantini tavsiya qilishadi",
+      "consult": "Konsultatsiya olish",
+      "chat": "Chat orqali yozish"
+    }
+  },
+  "doctors": {
+    "hero": {
+      "title": "Eng yaxshi shifokorlarni toping",
+      "subtitle": "Yuqori malakali va tajribali mutaxassislar bilan sog'ligingizga g'amxo'rlik qiling",
+      "findDoctor": "Shifokor topish",
+      "emergency": "Shoshilinch yordam"
+    },
+    "filters": {
+      "specialty": "Yo'nalish",
+      "country": "Davlat",
+      "city": "Shahar",
+      "allSpecialties": "Barcha yo'nalishlar",
+      "allCountries": "Barcha davlatlar",
+      "allCities": "Barcha shaharlar"
+    },
+    "specialties": {
+      "cardiology": "Kardiologiya",
+      "neurology": "Nevrologiya",
+      "dermatology": "Dermatologiya",
+      "orthopedics": "Ortopediya",
+      "pediatrics": "Pediatriya",
+      "oncology": "Onkologiya",
+      "gynecology": "Ginekologiya",
+      "psychiatry": "Psixiatriya"
+    },
+    "availability": {
+      "now": "Hozir mavjud",
+      "tomorrow": "Ertaga 10:00",
+      "nextWeek": "Keyingi hafta",
+      "thisWeek": "Bu hafta",
+      "nextMonth": "Keyingi oy"
+    },
+    "results": {
+      "title": "{{count}} ta shifokor topildi",
+      "showing": "{{showing}} dan {{total}} ta ko'rsatilmoqda"
+    },
+    "card": {
+      "online": "Onlayn",
+      "offline": "Oflayn",
+      "patients": "bemor",
+      "perConsultation": "konsultatsiya uchun",
+      "bookAppointment": "Uchrashuv band qilish"
+    },
+    "loadMore": "Ko'proq ko'rsatish",
+    "noResults": {
+      "title": "Hech qanday shifokor topilmadi",
+      "subtitle": "Ushbu mezonlar bo'yicha shifokorlar topilmadi. Filtrlarni o'zgartiring yoki barcha shifokorlarni ko'ring.",
+      "resetFilters": "Filtrlarni tozalash"
+    },
+    "whyChoose": {
+      "title": "Nima uchun bizning shifokorlarimizni tanlash kerak?",
+      "subtitle": "Bizning shifokorlarimiz yuqori malaka va keng tajribaga ega bo'lib, sizning sog'ligingiz uchun eng yaxshi yechimlarni taklif qilishadi.",
+      "verified": {
+        "title": "Tasdiqlangan shifokorlar",
+        "description": "Barcha shifokorlarimiz litsenziyalangan va tekshirilgan"
+      },
+      "experience": {
+        "title": "Keng tajriba",
+        "description": "10+ yillik tajribaga ega mutaxassislar"
+      },
+      "patients": {
+        "title": "Minglab bemorlar",
+        "description": "Muvaffaqiyatli davolangan bemorlar soni"
+      },
+      "quality": {
+        "title": "Yuqori sifat",
+        "description": "Eng zamonaviy usullar va texnologiyalar"
+      }
+    }
+  },
+  "testimonials": {
+    "hero": {
+      "title": "Bemorlarimiz fikrlari",
+      "subtitle": "Bizning bemorlarimizning MedMapp orqali sog'liqqa qaytish yo'lidagi ilhomlantiruvchi hikoyalari bilan tanishing.",
+      "stats": {
+        "mamnunBemorlar": "Mamnun Bemorlar",
+        "ijobiyFikrlar": "Ijobiy Fikrlar",
+        "mamlakatdanBemorlar": "Mamlakatdan Bemorlar"
+      }
+    },
+    "card": {
+      "verified": "Tasdiqlangan"
+    },
+    "cta": {
+      "title": "Sizning ham hikoyangiz bormi?",
+      "subtitle": "Agar siz ham MedMapp orqali shifo topgan bo'lsangiz, o'z hikoyangizni biz bilan ulashing va boshqalarga ilhom bering.",
+      "shareButton": "Hikoyangizni yuboring"
+    }
+  }
+}
