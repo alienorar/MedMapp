@@ -6,7 +6,8 @@
     "pricing": "Narxlar",
     "doctors": "Shifokorlar",
     "testimonials": "Sharhlar",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Menyu"
   },
   "common": {
     "getMedicalDiagnosis": "Tibbiy tashxis olish",

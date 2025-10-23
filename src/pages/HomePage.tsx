@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
 import hospital1 from '/images/hospital1.png'
 import doctor1 from '/images/doctor1.png'
 import doctor2 from '/images/doctor2.jpg'
@@ -17,171 +18,246 @@ import metroMain from '/images/Metro/main.jpg'
 
 export const HomePage = () => {
   const { t } = useTranslation()
+  const [counters, setCounters] = useState({
+    patients: 0,
+    clinics: 0,
+    doctors: 0
+  })
+  const [countersVisible, setCountersVisible] = useState(false)
+
+  // Counter animation function with easing
+  const animateCounter = (endValue: number, duration: number, callback: (value: number) => void) => {
+    let startTime: number
+    const startValue = 0
+    
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3)
+    
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime
+      const progress = Math.min((currentTime - startTime) / duration, 1)
+      const easedProgress = easeOutCubic(progress)
+      const currentValue = Math.floor(easedProgress * endValue)
+      callback(currentValue)
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
+    }
+    
+    requestAnimationFrame(animate)
+  }
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          
+          // Trigger counter animation when stats section is visible
+          if (entry.target.classList.contains('stats-section')) {
+            setCountersVisible(true)
+            // Stagger the animations for better visual effect
+            setTimeout(() => {
+              animateCounter(100, 2500, (value) => setCounters(prev => ({ ...prev, patients: value })))
+            }, 200)
+            setTimeout(() => {
+              animateCounter(20, 2500, (value) => setCounters(prev => ({ ...prev, clinics: value })))
+            }, 400)
+            setTimeout(() => {
+              animateCounter(150, 2500, (value) => setCounters(prev => ({ ...prev, doctors: value })))
+            }, 600)
+          }
+        }
+      })
+    }, observerOptions)
+
+    // Observe all scroll animation elements
+    const scrollElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-up, .stats-section')
+    scrollElements.forEach((el) => observer.observe(el))
+
+    return () => {
+      scrollElements.forEach((el) => observer.unobserve(el))
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-20 lg:py-32 overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0">
-          <video 
-            className="w-full h-full object-cover"
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-          >
-            <source src="/images/Intro.mp4" type="video/mp4" />
-            {/* Fallback image if video doesn't load */}
-            <img 
-              src={hospital1} 
-              alt="Medical Background" 
+        {/* Hero Section */}
+        <section className="relative inset-0 bg-gradient-to-b from-[rgba(0,50,100,0.6)] to-[rgba(0,100,150,0.8)] py-20 lg:py-32 overflow-hidden min-h-screen flex items-center animate-fade-in">
+          {/* Background Video */}
+          <div className="absolute inset-0">
+            <video
               className="w-full h-full object-cover"
-            />
-          </video>
-          <div className="absolute inset-0 bg-blue-900 bg-opacity-70"></div>
-        </div>
-        
-        <div className="container relative z-10">
-          <div className="text-center text-white max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-              {t('home.hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed">
-              {t('home.hero.subtitle')}
-            </p>
-            
-            {/* Consultation Form */}
-            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl max-w-6xl mx-auto backdrop-blur-sm bg-white/95">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                {/* Location Input */}
-                <div className="space-y-2">
-                  <label className="block text-sm font-bold text-gray-800 mb-2 text-left">
-                    {t('home.form.location')}
-                  </label>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-blue-500 group-focus-within:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <select className="w-full pl-12 pr-12 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 text-gray-800 font-medium bg-white hover:border-gray-300 transition-all duration-300 appearance-none cursor-pointer">
-                      <option className="text-gray-500">{t('home.form.selectRegion')}</option>
-                      <option>Toshkent</option>
-                      <option>Samarqand</option>
-                      <option>Buxoro</option>
-                      <option>Namangan</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src="/images/Intro.mp4" type="video/mp4" />
+              {/* Fallback image if video doesn't load */}
+              <img
+                src={hospital1}
+                alt="Medical Background"
+                className="w-full h-full object-cover"
+              />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/60 via-blue-800/70 to-blue-700/80 z-10"></div>
+          </div>
+
+          <div className="container relative z-10 max-w-7xl mx-auto px-4">
+            <div className="text-center text-white max-w-5xl mx-auto">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 animate-slide-up">
+                {t('home.hero.title')}
+              </h1>
+              <p className="text-xl md:text-2xl mb-16 opacity-90 leading-relaxed max-w-4xl mx-auto animate-slide-up animation-delay-200">
+                {t('home.hero.subtitle')}
+              </p>
+              
+              {/* Consultation Form */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-strong max-w-6xl mx-auto animate-slide-up animation-delay-400 hover:shadow-strong transition-shadow duration-300">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {/* Location Input */}
+                  <div>
+                    <label className="block text-sm font-bold text-gray-800 mb-2 text-left">
+                      {t('home.form.location')}
+                    </label>
+                    <div className="relative group">
+                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg className="h-5 w-5 text-blue-500 group-focus-within:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <select className="w-full pl-12 pr-12 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary text-gray-800 font-medium bg-white hover:border-gray-400 transition-all duration-300 appearance-none cursor-pointer hover:shadow-soft">
+                        <option className="text-gray-500">{t('home.form.selectRegion')}</option>
+                        <option>Toshkent</option>
+                        <option>Samarqand</option>
+                        <option>Buxoro</option>
+                        <option>Namangan</option>
+                      </select>
+                      <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                        <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Treatment Method Input */}
-                <div className="space-y-2">
-                  <label className="block text-sm font-bold text-gray-800 mb-2 text-left">
-                    {t('home.form.treatment')}
-                  </label>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-red-500 group-focus-within:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                    </div>
-                    <select className="w-full pl-12 pr-12 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/20 focus:border-red-500 text-gray-800 font-medium bg-white hover:border-gray-300 transition-all duration-300 appearance-none cursor-pointer">
-                      <option className="text-gray-500">{t('home.form.selectTreatment')}</option>
-                      <option>Kardiologiya</option>
-                      <option>Onkologiya</option>
-                      <option>Neyroxirurgiya</option>
-                      <option>Ortopediya</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                  {/* Treatment Method Input */}
+                  <div>
+                    <label className="block text-sm font-bold text-gray-800 mb-2 text-left">
+                      {t('home.form.treatment')}
+                    </label>
+                    <div className="relative group">
+                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg className="h-5 w-5 text-red-500 group-focus-within:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                      </div>
+                      <select className="w-full pl-12 pr-12 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 text-gray-800 font-medium bg-white hover:border-gray-400 transition-all duration-300 appearance-none cursor-pointer hover:shadow-soft">
+                        <option className="text-gray-500">{t('home.form.selectTreatment')}</option>
+                        <option>Kardiologiya</option>
+                        <option>Onkologiya</option>
+                        <option>Neyroxirurgiya</option>
+                        <option>Ortopediya</option>
+                      </select>
+                      <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                        <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Phone Input */}
-                <div className="space-y-2">
-                  <label className="block text-sm font-bold text-gray-800 mb-2 text-left">
-                    {t('home.form.phone')}
-                  </label>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-green-500 group-focus-within:text-green-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
+                  {/* Phone Input */}
+                  <div>
+                    <label className="block text-sm font-bold text-gray-800 mb-2 text-left">
+                      {t('home.form.phone')}
+                    </label>
+                    <div className="relative group">
+                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg className="h-5 w-5 text-green-500 group-focus-within:text-green-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </div>
+                      <input 
+                        type="tel" 
+                        placeholder="+998 (90) 123-45-67"
+                        className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500/20 focus:border-green-500 text-gray-800 font-medium bg-white hover:border-gray-400 transition-all duration-300 hover:shadow-soft"
+                      />
                     </div>
-                    <input 
-                      type="tel" 
-                      placeholder="+998 (90) 123-45-67"
-                      className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-green-500/20 focus:border-green-500 text-gray-800 font-medium bg-white hover:border-gray-300 transition-all duration-300"
-                    />
                   </div>
-                </div>
 
-                {/* Submit Button */}
-                <div className="space-y-2">
-                  <label className="block text-sm font-bold text-transparent mb-2">
-                    {/* Invisible label for spacing */}
-                    &nbsp;
-                  </label>
-                  <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0">
-                    <span className="flex items-center justify-center space-x-2">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                      <span>{t('home.form.consultation')}</span>
-                    </span>
-                  </button>
+                  {/* Submit Button */}
+                  <div>
+                    <label className="block text-sm font-bold text-transparent mb-2">
+                      {/* Invisible label for spacing */}
+                      &nbsp;
+                    </label>
+                    <button className="w-full bg-green-500 hover:bg-green-600 text-white font-bold h-[57px] px-1 rounded-xl transition-all duration-300 shadow-soft hover:shadow-medium hover:scale-105 active:scale-95 group">
+                      <span className="flex items-center justify-center gap-[4px]">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        <span>{t('home.form.consultation')}</span>
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Bottom Text Overlay */}
-        <div className="absolute bottom-0 left-0 p-8">
-          <p className="text-6xl font-bold text-white opacity-10">CUTTING EDGE TECHNOLOGY</p>
-        </div>
-      </section>
+          
+          {/* Bottom Text Overlay */}
+          <div className="absolute bottom-0 left-0 p-8">
+            <p className="text-6xl font-bold text-white opacity-10">CUTTING EDGE TECHNOLOGY</p>
+          </div>
+        </section>
 
       {/* Statistics Section */}
-      <section className="py-16 bg-blue-600">
+      <section className="py-16 bg-blue-600 stats-section">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center text-white">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-center text-white group hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all duration-300 group-hover:rotate-12">
+                <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">100</div>
-              <div className="text-lg opacity-90">{t('home.stats.satisfiedPatients')}</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-yellow-300 transition-colors duration-300 counter-number">
+                {countersVisible ? counters.patients : 0}
+                <span className="text-2xl md:text-3xl">+</span>
+              </div>
+              <div className="text-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300">{t('home.stats.satisfiedPatients')}</div>
             </div>
-            <div className="text-center text-white">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-center text-white group hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all duration-300 group-hover:rotate-12">
+                <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">20</div>
-              <div className="text-lg opacity-90">{t('home.stats.internationalClinics')}</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-yellow-300 transition-colors duration-300 counter-number">
+                {countersVisible ? counters.clinics : 0}
+                <span className="text-2xl md:text-3xl">+</span>
+              </div>
+              <div className="text-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300">{t('home.stats.internationalClinics')}</div>
             </div>
-            <div className="text-center text-white">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-center text-white group hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all duration-300 group-hover:rotate-12">
+                <svg className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">150</div>
-              <div className="text-lg opacity-90">{t('home.stats.worldClassDoctors')}</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 group-hover:text-yellow-300 transition-colors duration-300 counter-number">
+                {countersVisible ? counters.doctors : 0}
+                <span className="text-2xl md:text-3xl">+</span>
+              </div>
+              <div className="text-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300">{t('home.stats.worldClassDoctors')}</div>
             </div>
           </div>
         </div>
@@ -190,7 +266,7 @@ export const HomePage = () => {
       {/* Multi-disciplinary Medical Care Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               {t('home.medicalCare.title')}
             </h2>
@@ -200,7 +276,7 @@ export const HomePage = () => {
           </div>
           
           {/* Medical Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-scale-up">
             {[
               { icon: '🧬', title: t('home.medicalCare.oncology'), desc: t('home.medicalCare.oncologyDesc'), color: 'bg-purple-50 text-purple-600' },
               { icon: '🧠', title: t('home.medicalCare.neurosurgery'), desc: t('home.medicalCare.neurosurgeryDesc'), color: 'bg-cyan-50 text-cyan-600' },
@@ -215,12 +291,15 @@ export const HomePage = () => {
               { icon: '🫘', title: t('home.medicalCare.kidneyTransplant'), desc: t('home.medicalCare.kidneyTransplantDesc'), color: 'bg-emerald-50 text-emerald-600' },
               { icon: '🦴', title: t('home.medicalCare.boneMarrow'), desc: t('home.medicalCare.boneMarrowDesc'), color: 'bg-gray-50 text-gray-600' },
             ].map((service, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
-                <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div key={i} className="bg-white p-6 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 border border-gray-100 group hover:scale-105 hover:-translate-y-2 cursor-pointer">
+                <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{service.desc}</p>
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-full h-1 bg-gradient-to-r from-primary to-primary-light rounded-full"></div>
+                </div>
               </div>
             ))}
           </div>
@@ -230,21 +309,29 @@ export const HomePage = () => {
       {/* Popular Hospitals Section */}
       <section className="py-20 bg-gray-50">
         <div className="container">
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex justify-between items-center mb-12 scroll-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">{t('home.hospitals.title')}</h2>
-            <a href="#" className="text-blue-600 font-semibold hover:text-blue-700">{t('home.hospitals.viewAll')}</a>
+            <a href="#" className="text-primary font-semibold hover:text-primary-dark transition-colors duration-300">{t('home.hospitals.viewAll')}</a>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 scroll-scale-up">
             {[
               { name: t('home.hospitals.amrita'), location: t('home.hospitals.amritaLocation'), image: amritaMain },
               { name: t('home.hospitals.artemis'), location: t('home.hospitals.artemisLocation'), image: artemisMain },
               { name: t('home.hospitals.apollo'), location: t('home.hospitals.apolloLocation'), image: apolloMain },
               { name: t('home.hospitals.max'), location: t('home.hospitals.maxLocation'), image: maxMain },
             ].map((hospital, i) => (
-              <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+              <div key={i} className="bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-medium transition-all duration-300 group hover:scale-105 hover:-translate-y-2 cursor-pointer">
                 <div className="relative h-48 overflow-hidden">
-                  <img src={hospital.image} alt={hospital.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <img src={hospital.image} alt={hospital.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{hospital.name}</h3>
