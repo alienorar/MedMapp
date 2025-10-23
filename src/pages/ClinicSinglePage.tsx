@@ -6,17 +6,17 @@ import amrita1 from '/images/Amrita/1.jpg'
 import amritaMain from '/images/Amrita/Amrita-01.png'
 import artemisMain from '/images/Artemis/Artemis-main.jpg'
 import apolloMain from '/images/Apollo/Apollo.jpg'
-import maxMain from '/images/Max/max-main.jpg'
-import medantaMain from '/images/Medanta/main.jpg'
-import metroMain from '/images/Metro/main.jpg'
-import fortisMain from '/images/Fortis/main.jpg'
-import asianMain from '/images/Asian/Marengo_new.jpg'
+// import maxMain from '/images/Max/max-main.jpg'
+// import medantaMain from '/images/Medanta/main.jpg'
+// import metroMain from '/images/Metro/main.jpg'
+// import fortisMain from '/images/Fortis/main.jpg'
+// import asianMain from '/images/Asian/Marengo_new.jpg'
 import doctor1 from '/images/doctor1.png'
 import doctor2 from '/images/doctor2.jpg'
 import doctor3 from '/images/doctor3.jpg'
-import doctor4 from '/images/doctor4.jpg'
-import doctor5 from '/images/doctor5.jpg'
-import doctor6 from '/images/doctor6.jpg'
+// import doctor4 from '/images/doctor4.jpg'
+// import doctor5 from '/images/doctor5.jpg'
+// import doctor6 from '/images/doctor6.jpg'
 
 interface Clinic {
   id: string
@@ -36,7 +36,7 @@ interface Clinic {
     patients: number
   }
   treatments: {
-    icon: JSX.Element
+    icon: React.ReactElement
     title: string
     description: string
   }[]
@@ -69,6 +69,12 @@ export const ClinicSinglePage = () => {
   const { t } = useTranslation()
   const { clinicId } = useParams<{ clinicId: string }>()
   const [activeTab, setActiveTab] = useState('about')
+  
+  // Use clinicId to determine which clinic data to show
+  const currentClinicId = clinicId || 'amrita'
+  
+  // Log for debugging (remove in production)
+  console.log('Current clinic ID:', currentClinicId)
   const [isSticky, setIsSticky] = useState(false)
   const [lightboxImage, setLightboxImage] = useState<string | null>(null)
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import logo from '/images/logo/MedMapp_Logo.png'
 import uzFlag from '/images/language/uz.png'
@@ -8,6 +8,7 @@ import enFlag from '/images/language/en.png'
 
 export const Header = () => {
   const { t, i18n } = useTranslation()
+  const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false)
 
@@ -34,25 +35,46 @@ export const Header = () => {
           </Link>
 
           <nav className="header-nav">
-            <Link to="/" className="header-nav-link">
+            <Link 
+              to="/" 
+              className={`header-nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            >
               {t('nav.home')}
             </Link>
-            <Link to="/services" className="header-nav-link">
+            <Link 
+              to="/services" 
+              className={`header-nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+            >
               {t('nav.services')}
             </Link>
-            <Link to="/clinics" className="header-nav-link">
+            <Link 
+              to="/clinics" 
+              className={`header-nav-link ${location.pathname === '/clinics' ? 'active' : ''}`}
+            >
               {t('nav.clinics')}
             </Link>
-            <Link to="/pricing" className="header-nav-link">
+            <Link 
+              to="/pricing" 
+              className={`header-nav-link ${location.pathname === '/pricing' ? 'active' : ''}`}
+            >
               {t('nav.pricing')}
             </Link>
-            <Link to="/doctors" className="header-nav-link">
+            <Link 
+              to="/doctors" 
+              className={`header-nav-link ${location.pathname === '/doctors' ? 'active' : ''}`}
+            >
               {t('nav.doctors')}
             </Link>
-            <Link to="/testimonials" className="header-nav-link">
+            <Link 
+              to="/testimonials" 
+              className={`header-nav-link ${location.pathname === '/testimonials' ? 'active' : ''}`}
+            >
               {t('nav.testimonials')}
             </Link>
-            <Link to="/blog" className="header-nav-link">
+            <Link 
+              to="/blog" 
+              className={`header-nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
+            >
               {t('nav.blog')}
             </Link>
           </nav>
@@ -110,59 +132,59 @@ export const Header = () => {
           </button>
         </div>
 
-        {isMenuOpen && (
-          <nav className="mobile-nav">
-            <Link
-              to="/"
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.home')}
-            </Link>
-            <Link
-              to="/services"
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.services')}
-            </Link>
-            <Link
-              to="/clinics"
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.clinics')}
-            </Link>
-            <Link
-              to="/pricing"
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.pricing')}
-            </Link>
-            <Link
-              to="/doctors"
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.doctors')}
-            </Link>
-            <Link
-              to="/testimonials"
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.testimonials')}
-            </Link>
-            <Link
-              to="/blog"
-              className="mobile-nav-link"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.blog')}
-            </Link>
-          </nav>
-        )}
+               {isMenuOpen && (
+                 <nav className="mobile-nav">
+                   <Link
+                     to="/"
+                     className={`mobile-nav-link ${location.pathname === '/' ? 'active' : ''}`}
+                     onClick={() => setIsMenuOpen(false)}
+                   >
+                     {t('nav.home')}
+                   </Link>
+                   <Link
+                     to="/services"
+                     className={`mobile-nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+                     onClick={() => setIsMenuOpen(false)}
+                   >
+                     {t('nav.services')}
+                   </Link>
+                   <Link
+                     to="/clinics"
+                     className={`mobile-nav-link ${location.pathname === '/clinics' ? 'active' : ''}`}
+                     onClick={() => setIsMenuOpen(false)}
+                   >
+                     {t('nav.clinics')}
+                   </Link>
+                   <Link
+                     to="/pricing"
+                     className={`mobile-nav-link ${location.pathname === '/pricing' ? 'active' : ''}`}
+                     onClick={() => setIsMenuOpen(false)}
+                   >
+                     {t('nav.pricing')}
+                   </Link>
+                   <Link
+                     to="/doctors"
+                     className={`mobile-nav-link ${location.pathname === '/doctors' ? 'active' : ''}`}
+                     onClick={() => setIsMenuOpen(false)}
+                   >
+                     {t('nav.doctors')}
+                   </Link>
+                   <Link
+                     to="/testimonials"
+                     className={`mobile-nav-link ${location.pathname === '/testimonials' ? 'active' : ''}`}
+                     onClick={() => setIsMenuOpen(false)}
+                   >
+                     {t('nav.testimonials')}
+                   </Link>
+                   <Link
+                     to="/blog"
+                     className={`mobile-nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
+                     onClick={() => setIsMenuOpen(false)}
+                   >
+                     {t('nav.blog')}
+                   </Link>
+                 </nav>
+               )}
       </div>
     </header>
   )
