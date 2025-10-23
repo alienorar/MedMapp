@@ -6,10 +6,11 @@
     "pricing": "Цены",
     "doctors": "Врачи",
     "testimonials": "Отзывы",
-    "blog": "Блог"
+    "blog": "Блог",
+    "menu": "Меню"
   },
   "common": {
-    "getMedicalDiagnosis": "Получить медицинскую диагностику",
+    "getMedicalDiagnosis": "Получить диагностику",
     "readMore": "Подробнее",
     "submit": "Отправить",
     "close": "Закрыть",

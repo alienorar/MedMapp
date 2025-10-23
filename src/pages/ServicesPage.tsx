@@ -1,7 +1,30 @@
 import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
 
 export const ServicesPage = () => {
   const { t } = useTranslation()
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+        }
+      })
+    }, observerOptions)
+
+    const scrollElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-up')
+    scrollElements.forEach((el) => observer.observe(el))
+
+    return () => {
+      scrollElements.forEach((el) => observer.unobserve(el))
+    }
+  }, [])
 
   const specialties = [
     {
@@ -137,8 +160,13 @@ export const ServicesPage = () => {
             <p className="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed max-w-3xl mx-auto">
               {t('services.subtitle')}
             </p>
-            <a href="#services-process" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
-              {t('services.ctaButton')}
+            <a href="#services-process" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-soft hover:shadow-medium hover:scale-105 active:scale-95 group">
+              <span className="flex items-center space-x-2">
+                <span>{t('services.ctaButton')}</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
             </a>
           </div>
         </div>
@@ -147,7 +175,7 @@ export const ServicesPage = () => {
       {/* Services Process Section */}
       <section className="py-20 bg-white" id="services-process">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               {t('services.processTitle')}
             </h2>
@@ -157,11 +185,11 @@ export const ServicesPage = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-12">
+            <div className="space-y-12 scroll-scale-up">
               {/* Step 1 */}
               <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">1</div>
+                <div className="bg-white p-8 rounded-2xl shadow-soft border border-gray-100 flex-1 hover:shadow-medium transition-all duration-300 group">
                   <div className="flex items-start space-x-6">
                     <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -187,8 +215,8 @@ export const ServicesPage = () => {
 
               {/* Step 2 */}
               <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">2</div>
+                <div className="bg-white p-8 rounded-2xl shadow-soft border border-gray-100 flex-1 hover:shadow-medium transition-all duration-300 group">
                   <div className="flex items-start space-x-6">
                     <div className="w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center text-green-600 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -213,8 +241,8 @@ export const ServicesPage = () => {
 
               {/* Step 3 */}
               <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">3</div>
+                <div className="bg-white p-8 rounded-2xl shadow-soft border border-gray-100 flex-1 hover:shadow-medium transition-all duration-300 group">
                   <div className="flex items-start space-x-6">
                     <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -244,14 +272,17 @@ export const ServicesPage = () => {
       {/* Multi-Specialty Section */}
       <section className="py-20 bg-gray-50">
       <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-scale-up">
             {specialties.map((specialty, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
-                <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 border border-gray-100 group hover:scale-105 hover:-translate-y-2 cursor-pointer">
+                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   {specialty.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{specialty.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{specialty.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">{specialty.title}</h3>
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{specialty.description}</p>
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-full h-1 bg-gradient-to-r from-primary to-primary-light rounded-full"></div>
+                </div>
               </div>
             ))}
           </div>

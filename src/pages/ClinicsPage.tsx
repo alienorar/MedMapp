@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import amrita1 from '/images/Amrita/1.jpg'
 import artemisMain from '/images/Artemis/Artemis-main.jpg'
 import apolloMain from '/images/Apollo/Apollo.jpg'
@@ -38,7 +39,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: amrita1,
       accreditation: 'NABH, ISO, NABL',
-      href: '/clinics/amrita-hospital'
+      href: '/clinic/amrita'
     },
     {
       id: 'artemis',
@@ -49,7 +50,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: artemisMain,
       accreditation: 'NABH, JCI',
-      href: '/clinics/artemis-hospital'
+      href: '/clinic/artemis'
     },
     {
       id: 'apollo',
@@ -60,7 +61,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: apolloMain,
       accreditation: 'JCI',
-      href: '/clinics/apollo-hospital'
+      href: '/clinic/apollo'
     },
     {
       id: 'max',
@@ -71,7 +72,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: maxMain,
       accreditation: 'JCI, NABH',
-      href: '/clinics/max-hospital'
+      href: '/clinic/max'
     },
     {
       id: 'medanta',
@@ -82,7 +83,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: medantaMain,
       accreditation: 'NABH',
-      href: '/clinics/medanta-hospital'
+      href: '/clinic/medanta'
     },
     {
       id: 'metro',
@@ -93,7 +94,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: metroMain,
       accreditation: 'JCI, NABH',
-      href: '/clinics/metro-hospital'
+      href: '/clinic/metro'
     },
     {
       id: 'fortis',
@@ -104,7 +105,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: fortisMain,
       accreditation: 'JCI, NABH, NABL',
-      href: '/clinics/fortis-hospital'
+      href: '/clinic/fortis'
     },
     {
       id: 'asian',
@@ -115,7 +116,7 @@ export const ClinicsPage = () => {
       specialties: ['kardiologiya', 'onkologiya', 'nevrologiya'],
       image: asianMain,
       accreditation: 'NABH, NABL',
-      href: '/clinics/asian-hospital'
+      href: '/clinic/asian'
     }
   ]
 
@@ -130,11 +131,6 @@ export const ClinicsPage = () => {
     setFilteredClinics(filtered)
   }, [selectedSpecialty, selectedCountry, selectedCity])
 
-  const handleClinicClick = (href: string) => {
-    if (href && href !== '#') {
-      window.location.href = href
-    }
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -226,10 +222,10 @@ export const ClinicsPage = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredClinics.map((clinic) => (
-              <div
+              <Link
                 key={clinic.id}
-                onClick={() => handleClinicClick(clinic.href)}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden"
+                to={clinic.href}
+                className="bg-white rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer group overflow-hidden hover:scale-105 hover:-translate-y-2"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -261,7 +257,7 @@ export const ClinicsPage = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           

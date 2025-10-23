@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import { Loading } from './components/Loading'
 import { HomePage } from './pages/HomePage'
 import { ServicesPage } from './pages/ServicesPage'
 import { ClinicsPage } from './pages/ClinicsPage'
+import { ClinicSinglePage } from './pages/ClinicSinglePage'
 import { PricingPage } from './pages/PricingPage'
 import  DoctorsPage  from './pages/DoctorsPage'
 import TestimonialsPage from './pages/TestimonialsPage'
@@ -12,6 +15,21 @@ import { BlogPostPage } from './pages/BlogPostPage'
 import './i18n/config'
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return <Loading />
+  }
+
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
@@ -21,6 +39,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/clinics" element={<ClinicsPage />} />
+            <Route path="/clinic/:id" element={<ClinicSinglePage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/doctors" element={<DoctorsPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />

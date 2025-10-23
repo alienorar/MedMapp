@@ -6,7 +6,8 @@
     "pricing": "Pricing",
     "doctors": "Doctors",
     "testimonials": "Testimonials",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu": "Menu"
   },
   "common": {
     "getMedicalDiagnosis": "Get Medical Diagnosis",
