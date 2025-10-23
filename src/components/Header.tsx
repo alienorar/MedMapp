@@ -185,9 +185,20 @@ export const Header = () => {
             ></div>
             
             {/* Menu Panel */}
-            <nav className="absolute right-0 top-0 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-out translate-x-0 slide-in-right mobile-menu-panel">
+            <nav 
+              className="absolute right-0 top-0 h-full w-80 shadow-2xl transform transition-all duration-500 ease-out translate-x-0 slide-in-right"
+              style={{ 
+                backgroundColor: '#ffffff', 
+                opacity: 1,
+                backdropFilter: 'none',
+                WebkitBackdropFilter: 'none'
+              }}
+            >
               {/* Menu Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div 
+                className="flex items-center justify-between p-6 border-b border-gray-200"
+                style={{ backgroundColor: '#ffffff' }}
+              >
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                     <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +219,10 @@ export const Header = () => {
 
 
               {/* Navigation Links */}
-              <div className="p-6 space-y-1">
+              <div 
+                className="p-6 space-y-1"
+                style={{ backgroundColor: '#ffffff' }}
+              >
                 <Link
                   to="/"
                   className={`flex items-center justify-between py-4 px-3 rounded-lg text-gray-700 hover:bg-gray-50 transition-all duration-300 font-medium transform hover:translate-x-2 ${
@@ -296,7 +310,10 @@ export const Header = () => {
               </div>
 
               {/* CTA Button */}
-              <div className="p-6 border-t border-gray-200">
+              <div 
+                className="p-6 border-t border-gray-200"
+                style={{ backgroundColor: '#ffffff' }}
+              >
                 <button className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-soft hover:shadow-medium flex items-center justify-center space-x-3 group">
                   <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
