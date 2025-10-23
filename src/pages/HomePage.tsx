@@ -28,7 +28,7 @@ export const HomePage = () => {
   // Counter animation function with easing
   const animateCounter = (endValue: number, duration: number, callback: (value: number) => void) => {
     let startTime: number
-    const startValue = 0
+    // const startValue = 0
     
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3)
     
